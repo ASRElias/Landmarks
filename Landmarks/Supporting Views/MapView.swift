@@ -1,21 +1,20 @@
-//
-//  MapView.swift
-//  Landmarks
-//
-//  Created by Elias Santa Rosa on 27/05/20.
-//  Copyright © 2020 Santa Rosa Digital. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view that hosts an `MKMapView`.
+*/
 
 import SwiftUI
 import MapKit
 
 struct MapView: UIViewRepresentable {
     var coordinate: CLLocationCoordinate2D
-    
+
     func makeUIView(context: Context) -> MKMapView {
         MKMapView(frame: .zero)
     }
-    
+
     func updateUIView(_ uiView: MKMapView, context: Context) {
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let region = MKCoordinateRegion(center: coordinate, span: span)

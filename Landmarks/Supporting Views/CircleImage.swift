@@ -1,21 +1,20 @@
-//
-//  CircleImage.swift
-//  Landmarks
-//
-//  Created by Elias Santa Rosa on 27/05/20.
-//  Copyright © 2020 Santa Rosa Digital. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view that clips an image to a circle and adds a stroke and shadow.
+*/
 
 import SwiftUI
 
 struct CircleImage: View {
     var image: Image
-    
+
     var body: some View {
         image
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 4))
-            .shadow(radius: 10.0)
+            .shadow(radius: 10)
     }
 }
 

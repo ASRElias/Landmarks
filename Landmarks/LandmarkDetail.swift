@@ -1,10 +1,9 @@
-//
-//  LandmarkDetail.swift
-//  Landmarks
-//
-//  Created by Elias Santa Rosa on 27/05/20.
-//  Copyright © 2020 Santa Rosa Digital. All rights reserved.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view showing the details for a landmark.
+*/
 
 import SwiftUI
 
@@ -23,7 +22,7 @@ struct LandmarkDetail: View {
                 .frame(height: 300)
             
             CircleImage(image: landmark.image)
-                .offset(y: -130)
+                .offset(x: 0, y: -130)
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading) {
@@ -32,9 +31,11 @@ struct LandmarkDetail: View {
                         .font(.title)
                     
                     Button(action: {
-                        self.userData.landmarks[self.landmarkIndex].isFavorite.toggle()
+                        self.userData.landmarks[self.landmarkIndex]
+                            .isFavorite.toggle()
                     }) {
-                        if self.userData.landmarks[self.landmarkIndex].isFavorite {
+                        if self.userData.landmarks[self.landmarkIndex]
+                            .isFavorite {
                             Image(systemName: "star.fill")
                                 .foregroundColor(Color.yellow)
                         } else {
