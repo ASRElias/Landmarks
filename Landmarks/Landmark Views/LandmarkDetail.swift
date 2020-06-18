@@ -14,7 +14,7 @@ struct LandmarkDetail: View {
     var landmarkIndex: Int {
         userData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
-    
+
     var body: some View {
         VStack {
             MapView(coordinate: landmark.locationCoordinate)
@@ -34,8 +34,7 @@ struct LandmarkDetail: View {
                         self.userData.landmarks[self.landmarkIndex]
                             .isFavorite.toggle()
                     }) {
-                        if self.userData.landmarks[self.landmarkIndex]
-                            .isFavorite {
+                        if self.userData.landmarks[self.landmarkIndex].isFavorite {
                             Image(systemName: "star.fill")
                                 .foregroundColor(Color.yellow)
                         } else {
